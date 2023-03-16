@@ -1,21 +1,26 @@
-//First Step is to install npm mongodb package...use command npm i mongodb to install
-const {MongoClient}=require('mongodb')
-const url='mongodb://localhost:27017'                           //This Url will always be same as long as local connection is made because port no. 27017 is registered for mongodb
+const dbConnect=require('./mongodb')
 
-const client=new MongoClient(url)                               //pass the mongodb url inside which will be same everytime
+//Now, We can get data via 2 methods, (internally they work in the same fashion!)
 
-//Now Lets see how to get data from database
-async function getData()
-{  
-    let result=await client.connect()                           //this returns a promise, so preceded with await
-    let db=result.db('e-comm')                                  //to which database, we want to connect
+/*
+Method - 1 
+dbConnect().then((res)=>{
+    res.find().toArray().then((data)=>{
+        console.log(data)
+    })
+})
+*/
 
-
-    //We can have many collections right, now select which collection to access
-
-    let collection=db.collection('products')                    //we are connecting with products collection
-    let response=await collection.find({}).toArray()            //find method will get all the data, toArray is used so that data could be seen in redable structure
-    console.log(response)
+//Method - 2 ...This is mostly used method, so use this method.
+const getData=async ()=>{
+    let data=await dbConnect();
+    data=await data.find().toArray()
+    console.log(data)
 }
 
 getData()
+
+
+//This is the recommended practice when you want to connect db with node, always make a seperate file which connects node with mongodb
+//and simply here we can make different functions that we want to execute
+//Cleared The Clutter....Right!
