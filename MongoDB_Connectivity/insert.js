@@ -6,7 +6,7 @@ const dbConnect=require('./mongodb')
 
 const insertData=async ()=>{
     let db=await dbConnect();
-    const result=await db.insertMany(                                        //insert is deprecated so used insertOne, insertMany is one more
+    const result=await db.insertMany(                                        //insert is deprecated so used--> insertOne, insertMany (to insert multiple data @ once)..remember it returns promise, so preceding it with await
         [
             {name:"Realme 6",brand:"RealME",price:"15000"},
             {name:"Realme 10",brand:"RealME",price:"25000"},

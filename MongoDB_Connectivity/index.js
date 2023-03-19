@@ -14,7 +14,7 @@ dbConnect().then((res)=>{
 //Method - 2 ...This is mostly used method, so use this method.
 const getData=async ()=>{
     let data=await dbConnect();
-    data=await data.find().toArray()
+    data=await data.find().toArray()             //find() is an asynchronous function, so obviously, await is used!
     console.log(data)
 }
 
