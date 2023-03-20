@@ -2,7 +2,7 @@ const dbConnect=require('./mongodb')
 
 const deleteData=async ()=>{
     let data=await dbConnect()
-    let result=await data.deleteMany({name:'Realme 10'})
+    let result=await data.deleteMany({name:'Realme 6'})
 
     console.log(result)
 }

@@ -4,13 +4,13 @@
 
 //the Step - 1 is to get the mongoose installed and import it here like this
 const mongoose=require('mongoose')
+const productSchema=new mongoose.Schema({                                //creating schema
+    name:String                                                          //one field named 'name' added in schema
+ })
 
 const main=async ()=>{
     //Step - 2
     await mongoose.connect("mongodb://localhost:27017/e-comm")               //e-comm is the name of database
-    const productSchema=new mongoose.Schema({                                //creating schema
-        name:String                                                          //one field named 'name' added in schema
-     })
 
     const ProductsModel=mongoose.model('products',productSchema)             //first argument is the name of the collection, other is the schema
     
@@ -23,3 +23,6 @@ const main=async ()=>{
 }
 
 main()
+
+
+//now after understanding basics lets do crud operations using it so that we can get the good understanding!
