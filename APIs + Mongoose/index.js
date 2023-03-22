@@ -24,10 +24,11 @@ app.delete("/delete/:_id",async (req,res)=>{                              //reme
 })
 
 app.put("/edit/:_id",async (req,res)=>{
-    let data=await Product.updateOne(
-        req.params,{$set:req.body}
+    let data=await Product.updateOne( 
+        req.params,{$set:req.body}                                        //since req.params is already an object, so wrapping it inside { } will throw error.
         )
         res.send(data)
 })
+
 
 app.listen(5000)
