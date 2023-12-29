@@ -25,7 +25,7 @@ route.use(reqFilter)                //don't forget to add this...pass middleware
 
 // app.get('/',reqFilter,(req,res)=>{                  //applied middleware only at home page by passing middleware's name as second arg.
 //     res.send("Home Page")                           //but this is not efficient as we have to write same in which ever route we want middleware.
-// })                                                  //for this we have to use express.Router() well known as creating router instance.
+// })                                                  //for this we have to use express.Router() well known for creating router instance.
 
 route.get('/',(req,res)=>{
     res.send("Home Page")

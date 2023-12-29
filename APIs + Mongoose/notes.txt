@@ -1,0 +1,6 @@
+How does mongoose package work?
+in mongoose, the firsty thing we have is Schema 
+
+Schema - Means we first define the structure
+    Via this schema, we make the model
+    and using this model, we do CRUD Operations

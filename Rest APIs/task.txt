@@ -1,0 +1,20 @@
+What We have to do is the following
+
+design a REST API for JSON
+Remember one thing, always design hybrid APIs means that your api should be working both in mobileapp & browser
+
+You can make something like Get /users , in this case display HTML .... this will be for your browser  --- Server Side Rendering
+You can make something like Get /api/users , in this case display JSON .... this will be for your mobile app --- Client Side Rendering
+
+GET /api/users - List all users
+GET /api/users/1 - Get the user with ID 1             These will be dynamic routes... because we don't know how many user will be there...
+GET /api/users/2 - Get the user with ID 2
+
+
+POST /api/users - Create A New user
+
+PATCH /api/users/1 -  Edit the user with ID 1
+
+DELETE /api/users/1 - Delete the user with ID 1
+
+for now we don't have a database, so we will be getting the data(json data) from the website named mokaaro.com and perform the above operations

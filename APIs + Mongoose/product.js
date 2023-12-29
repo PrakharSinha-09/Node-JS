@@ -2,11 +2,31 @@ const mongoose=require('mongoose')
 
 //Creating Schema
 const productSchema=new mongoose.Schema({                              
-    name:String,
-    price:Number,
-    brand:String,
-    Category:String                                                         
- })
+    // name:String,
+    // price:Number,
+    // brand:String,
+    // Category:String      
+    
+    name:{
+        type:String,
+        required:true
+    },
+
+    price:{
+        type:Number,
+        required:true
+    },
+
+    brand:{
+        type:String,
+        required:true
+    },
+
+    Category:{
+        type:String,
+        required:true
+    },
+ },{timestamps:true})
 
 
  //Model Creation

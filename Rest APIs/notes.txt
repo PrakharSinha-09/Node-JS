@@ -1,0 +1,11 @@
+REST API are basically the principles or standards that should be followed while designig the APIs
+It could be understood as the standards that should be followed : it says
+
+1. One Should effectively follow the communication between client and server like when server side rendering of the response must be sent or client
+side rendering things happen..
+Like When you are sure that your client will always be browsers then in that case, you should go for sever side rendering (i.e., directly send HTML) otherwise
+lets say for any other client like mobile app requesting the data, or smart devices like alexa requestingm, in that case one should'nt go for SSR because 
+you don't know how to render data rather send response in JSON or XML format and then it will be rendered at client end accordingly!
+
+2. One should respect all http methods, like you should use http methods for what purpose they are made for
+for example lets say you want to delete the data from the database, you can do it via POST/DELETE/PATCH/PUT but for the standard, you should use DELETE

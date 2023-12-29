@@ -10,15 +10,15 @@ app.post("/create",async (req,res)=>{                                     //rout
     let result=await data.save()                                          //and then save it to DB 
     res.send(result)
 })
-
+   
 app.get("/getData",async (req,res)=>{
     let data=await Product.find()
     console.log(data) 
     res.send(data)
 })
 
-app.delete("/delete/:_id",async (req,res)=>{                              //remember to send _id and not just id and no need to include :_ in api call directly like http://localhost:5000/delete/6418b9b82567a7366eedecf1
-    let data=await Product.deleteOne(req.params)                            
+app.delete("/delete/:id",async (req,res)=>{                              //remember to send _id and not just id and no need to include :_ in api call directly like http://localhost:5000/delete/6418b9b82567a7366eedecf1
+    let data=await Product.deleteOne({_id:req.params.id})                            
     console.log(data) 
     res.send(data)
 })
